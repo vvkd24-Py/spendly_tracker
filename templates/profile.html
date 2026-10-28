@@ -82,6 +82,7 @@
                 </tr>
             </thead>
             <tbody>
+                {% if expenses %}
                 {% for tx in expenses %}
                 <tr>
                     <td>{{ tx.date }}</td>
@@ -102,6 +103,16 @@
                     </td>
                 </tr>
                 {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="5" class="empty-state">
+                        <div class="empty-state-inner">
+                            <span>No transactions yet</span>
+                            <a href="{{ url_for('add_expense') }}" class="btn-primary">Add your first expense</a>
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
             </tbody>
         </table>
     </section>
@@ -115,6 +126,9 @@
             {% for cat in category_breakdown %}
             <div class="breakdown-row">
                 <span class="breakdown-name">{{ cat.name }}</span>
+                <div class="breakdown-bar-track">
+                    <div class="breakdown-bar" style="width: {{ cat.pct }}%"></div>
+                </div>
                 <span class="breakdown-amount">₹{{ "%.2f" | format(cat.amount) }}</span>
                 <span class="breakdown-pct">{{ cat.pct }}%</span>
             </div>

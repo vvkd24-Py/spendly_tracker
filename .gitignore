@@ -1,8 +1,11 @@
 expense_tracker.db
+spendly.db
+--help
+.claude/plans/
+.claude/settings.json
 *.pyc
 *.pyo
 .DS_Store
-.claude/plans/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

@@ -17,8 +17,10 @@ from database.queries import (
 )
 from werkzeug.security import check_password_hash
 
+import os
+
 app = Flask(__name__)
-app.secret_key = "spendly-dev-secret-key"
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", "spendly-dev-secret-key")
 
 CATEGORIES = ["Food", "Transport", "Bills", "Health", "Entertainment", "Shopping", "Other"]
 

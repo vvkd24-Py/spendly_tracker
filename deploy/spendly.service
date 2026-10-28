@@ -1,0 +1,21 @@
+[Unit]
+Description=Spendly Expense Tracker (gunicorn)
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/spendly
+EnvironmentFile=/home/ubuntu/spendly/.env
+ExecStart=/home/ubuntu/spendly/venv/bin/gunicorn \
+    --workers 2 \
+    --bind 127.0.0.1:5000 \
+    --timeout 120 \
+    --access-logfile /var/log/spendly/access.log \
+    --error-logfile  /var/log/spendly/error.log \
+    wsgi:app
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,111 @@
+/* ------------------------------------------------------------------ */
+/* Expense form page layout                                            */
+/* ------------------------------------------------------------------ */
+
+.expense-form-page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+}
+
+.expense-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------ */
+/* Header                                                               */
+/* ------------------------------------------------------------------ */
+
+.expense-form-header {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 1.25rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--accent); }
+
+.expense-form-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+}
+
+.expense-form-subtitle {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+}
+
+/* ------------------------------------------------------------------ */
+/* Form card                                                            */
+/* ------------------------------------------------------------------ */
+
+.expense-form-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Two-column row                                                       */
+/* ------------------------------------------------------------------ */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Optional label suffix                                                */
+/* ------------------------------------------------------------------ */
+
+.form-optional {
+    font-weight: 400;
+    color: var(--ink-faint);
+}
+
+/* ------------------------------------------------------------------ */
+/* Form actions                                                         */
+/* ------------------------------------------------------------------ */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-soft);
+}
+
+.btn-submit-form {
+    padding: 0.65rem 2rem;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit-form:hover { background: var(--accent); }
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                           */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .expense-form-page { padding: 1.5rem 1rem 3rem; }
+}
